@@ -1,5 +1,8 @@
-if __name__ == "__main__":
-    for i in range(1, 100000):
+LIMIT = 100000
+
+
+def fb1():
+    for i in range(1, LIMIT):
         value = ""
         if not i % 3:
             value += "Fizz"
@@ -15,3 +18,7 @@ if __name__ == "__main__":
         print(value, end="")
 
     print()
+
+
+if __name__ == "__main__":
+    fb1()
