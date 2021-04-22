@@ -1,3 +1,6 @@
+from timeit import timeit
+
+
 LIMIT = 100000
 
 
@@ -21,4 +24,4 @@ def fb1():
 
 
 if __name__ == "__main__":
-    fb1()
+    print(f"\nfb1 run time: {timeit(fb1, number=1)}")
