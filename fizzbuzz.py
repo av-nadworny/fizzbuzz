@@ -23,6 +23,10 @@ def fb1():
 
 
 def fb2():
+    '''
+    Fill by blocks of 15 (3*5) precalculated values.
+    Rest values calculate by naive solution.
+    '''
     with open('fb2.txt', 'w') as f:
         for i in range(1, LIMIT-15, 15):
             if i > 1:
