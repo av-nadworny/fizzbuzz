@@ -5,48 +5,46 @@ LIMIT = 100000
 
 
 def fb1():
-    for i in range(1, LIMIT):
-        value = ""
-        if not i % 3:
-            value += "Fizz"
-        if not i % 5:
-            if value:
-                value += " "
-            value += "Buzz"
-        if not value:
-            value += str(i)
+    with open('fb1.txt', 'w') as f:
+        for i in range(1, LIMIT):
+            value = ""
+            if not i % 3:
+                value += "Fizz"
+            if not i % 5:
+                if value:
+                    value += " "
+                value += "Buzz"
+            if not value:
+                value += str(i)
 
-        if i > 1:
-            print(", ", end="")
-        print(value, end="")
-
-    print()
+            if i > 1:
+                f.write(", ")
+            f.write(value)
 
 
 def fb2():
-    for i in range(1, LIMIT-15, 15):
-        if i > 1:
-            print(", ", end='')
-        print(f"{i}, {i+1}, Fizz, {i+3}, Buzz, Fizz, {i+6}, {i+7}, Fizz, Buzz,"
-              f" {i+10}, Fizz, {i+12}, {i+13}, Fizz Buzz", end='')
+    with open('fb2.txt', 'w') as f:
+        for i in range(1, LIMIT-15, 15):
+            if i > 1:
+                f.write(", ")
+            f.write(f"{i}, {i+1}, Fizz, {i+3}, Buzz, Fizz, {i+6}, {i+7}, "
+                    f"Fizz, Buzz, {i+10}, Fizz, {i+12}, {i+13}, Fizz Buzz")
 
-    c = i + 15
-    for i in range(c, LIMIT):
-        value = ""
-        if not i % 3:
-            value += "Fizz"
-        if not i % 5:
-            if value:
-                value += " "
-            value += "Buzz"
-        if not value:
-            value += str(i)
+        c = i + 15
+        for i in range(c, LIMIT):
+            value = ""
+            if not i % 3:
+                value += "Fizz"
+            if not i % 5:
+                if value:
+                    value += " "
+                value += "Buzz"
+            if not value:
+                value += str(i)
 
-        if i > 1:
-            print(", ", end="")
-        print(value, end="")
-
-    print()
+            if i > 1:
+                f.write(", ")
+            f.write(value)
 
 
 if __name__ == "__main__":
